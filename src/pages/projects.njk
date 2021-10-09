@@ -1,0 +1,32 @@
+---
+layout: default
+title: Projects
+name: Projects
+label: Projects
+permalink: /projects/
+---
+
+<div class="container container--small">
+<ol reversed>
+	{% for post in posts %}
+	<li>
+		<article class="list-item {% if post.data.link %}list-item--external{% endif %}">
+			<h3 class="mb-xs">
+				<a href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url | url }}{% endif %}">{{ post.data.title }}</a>
+			</h3>
+			
+			<div class="d-f jc-sb">
+				<div class="post-meta">
+          <time datetime="{{ post.date }}">{{ post.date | readableDate}}</time> <span aria-hidden="true">🔖</span> 
+
+          {% for tag in post.data.tags %}
+          <a href="/blog/tags/{{ tag | slug }}" class="post-tag">{{ tag }}</a>
+          {% endfor %}
+				</div>
+				
+				{% if post.data.website %}<div class="post-website">{{ post.data.website }}</div>{% endif %}
+			</div>
+		</article>
+	</li>
+	{% endfor %}
+</div>
