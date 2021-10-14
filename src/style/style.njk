@@ -1,0 +1,34 @@
+---
+permalink: style.css
+---
+
+
+{# 01)	SS BASE
+02)	SS TOPBAR
+03) SS MOBILE MENU
+04) SS HERO
+05) SS PORTFOLIO
+06) SS SKILLS
+07) SS TIMELINE
+08) SS PRICING
+09) SS NEWS
+10) SS CONTACT
+11) SS COPYRIGHT
+12) SS CURSOR
+13) SS MEDIA QUERIES (FOR SMALL DEVIVES) #}
+
+<!-- capture the CSS content -->
+{% set css %}
+  {# {% include "./colors.css" %} #}
+  {% include "./plugins.css" %}
+  {% include "./base.css" %}
+  {% include "./../_includes/partials/header/header.css" %}
+  {% include "./../pages/home/home.css" %}
+   {% include "./../pages/projects/projects.css" %}
+  {% include "./style.css" %}
+{% endset %}
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  {{ css | safe }}
+  {# {{ css | cssmin | safe }} #}
+</style>

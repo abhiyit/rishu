@@ -16,16 +16,14 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/style/plugins.css" />
-    <link rel="stylesheet" type="text/css" href="/style/colors.css" />
-    <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
 
 
 </head>
 
 <body class="{% if label %}{{ label }}{% else %}{{ layout }}{% endif %}">
     <div class="kura_tm_all_wrap" data-magic-cursor="show" data-color="orange">
-    {% include partials/header.html %}
+    {% include partials/header/header.html %}
     <div>
         <div>{{ content | safe }}</div>
     </div>

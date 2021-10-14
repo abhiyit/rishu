@@ -1,0 +1,16 @@
+.list-of-projects{
+    min-height: 500px;
+}
+
+
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+      border: 1px solid black;
+  }

@@ -1,0 +1,125 @@
+/*---------------------------------------------------*/
+/*	02) SS TOPBAR
+/*---------------------------------------------------*/
+
+.ss_tm_topbar{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 10;
+	transform: translateY(-100%);
+	
+	-webkit-transition: all .4s ease;
+	   -moz-transition: all .4s ease;
+	    -ms-transition: all .4s ease;
+	     -o-transition: all .4s ease;
+	        transition: all .4s ease;
+}
+body.opened .ss_tm_topbar{
+	transition-delay: .4s;
+	transform: translateY(0);
+	background: var(--color-brand);
+}
+.ss_tm_topbar .wrapper{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.ss_tm_topbar.animate .wrapper{
+	background-color: rgba(255,255,255,1.00);
+}
+.ss_tm_topbar .topbar_inner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 37px 30px 50px;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.ss_tm_topbar.animate .topbar_inner{
+	padding: 20px 37px 20px 50px;
+}
+.ss_tm_topbar .logo img{
+	max-width: 70px;
+	max-height: 70px;
+}
+.ss_tm_topbar .menu{
+	display: flex;
+	align-items: center;
+}
+.ss_tm_topbar .list{
+	padding-right: 40px;
+}
+.ss_tm_topbar .list ul{
+	margin: 0px;
+	list-style-type: none;
+}
+.ss_tm_topbar .list ul li{
+	margin: 0px 20px 0px 0px;
+	display: inline-block;
+	list-style-type: none;
+	opacity: 0;
+	visibility: hidden;
+	position: relative;
+	left: 10px;
+	color: #f9f9f9;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.ss_tm_topbar .list ul li:last-child{
+	margin-right: 0px;
+}
+.ss_tm_topbar .list ul li.opened{
+	opacity: 1;
+	visibility: visible;
+	left: 0px;
+}
+.ss_tm_topbar .list ul li a{
+	text-decoration: none;
+	color: #000;
+	font-family: "Poppins";
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.ss_tm_topbar .list ul li a:hover{
+	color: var(--color-hover);
+}
+.ss_tm_topbar .list ul li.current a{
+	color: var(--color-hover);
+    font-weight: 400;
+}
+.ss_tm_topbar .trigger{
+	line-height: 1;
+}
+.trigger .hamburger-inner, 
+.trigger .hamburger-inner:after, 
+.trigger .hamburger-inner:before{
+	height: 2px;
+	width: 30px;
+}
+.trigger .hamburger{
+	padding: 0px;
+}

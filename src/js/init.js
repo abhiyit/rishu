@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2021 Marketify
- * Author: Marketify
- * This file is made for CURRENT TEMPLATE
-*/
-
 
 jQuery(document).ready(function(){
 
@@ -11,11 +5,10 @@ jQuery(document).ready(function(){
 	
 	// here all ready functions
 	
-	kura_tm_nav_bg();
-	kura_tm_trigger_menu();
-	kura_tm_down();
-	kura_tm_hero_image();
-	kura_tm_service_popup();
+	ss_tm_nav_bg();
+	ss_tm_trigger_menu();
+	ss_tm_down();
+	ss_tm_hero_image();
 	kura_tm_news_popup();
 	kura_tm_portfolio_popup();
 	kura_tm_cursor();
@@ -40,12 +33,12 @@ jQuery(document).ready(function(){
 // -------------   TOPBAR BG SCROLL  ---------------
 // -------------------------------------------------
 
-function kura_tm_nav_bg(){
+function ss_tm_nav_bg(){
 	
 	"use strict";
 	
 	jQuery(window).on('scroll',function(){
-		var menu	 		= jQuery('.kura_tm_topbar');
+		var menu	 		= jQuery('.ss_tm_topbar');
 		var WinOffset		= jQuery(window).scrollTop();
 		
 		if(WinOffset >= 100){
@@ -66,12 +59,12 @@ jQuery('.anchor_nav').onePageNav();
 // ---------------   TRIGGER MENU    -------------------
 // -----------------------------------------------------
 
-function kura_tm_trigger_menu(){
+function ss_tm_trigger_menu(){
 	
 	"use strict";
 
 	var hamburger 		= jQuery('.trigger .hamburger');
-	var list			= jQuery('.kura_tm_topbar .list ul li');
+	var list			= jQuery('.ss_tm_topbar .list ul li');
 	var mobileMenu		= jQuery('.kura_tm_mobile_menu .dropdown');
 	var mobileMenuList	= jQuery('.kura_tm_mobile_menu .dropdown .dropdown_inner ul li a');
 
@@ -104,11 +97,11 @@ function kura_tm_trigger_menu(){
 // -----------------    DOWN    ------------------------
 // -----------------------------------------------------
 
-function kura_tm_down(){
+function ss_tm_down(){
 	
 	"use strict";
-	var topbar		= jQuery('.kura_tm_topbar').outerHeight();
-	jQuery('.kura_tm_hero .down a').on('click',function(){
+	var topbar		= jQuery('.ss_tm_topbar').outerHeight();
+	jQuery('.ss_tm_hero .down a').on('click',function(){
 		if($.attr(this, 'href') !== '#'){
 			$('html, body').animate({
 				scrollTop: $($.attr(this, 'href')).offset().top-topbar+20
@@ -120,53 +113,22 @@ function kura_tm_down(){
 
 // -----------------------------------------------------
 // ---------------   HERO IMAGE  -----------------------
-// -----------------------------------------------------
+// ----------------------------------------------------
 
-function kura_tm_hero_image(){
+function ss_tm_hero_image(){
 	"use strict";
 	
-	var FixedImage	= jQuery('.kura_tm_hero .right .image .main').data('img-url');
-	var wrapper	= jQuery('.kura_tm_hero .services ul');
+	var FixedImage	= jQuery('.ss_tm_hero .right .image .main').data('img-url');
+	var wrapper	= jQuery('.ss_tm_hero .services ul');
 	var list	= wrapper.find('li a');
 	list.on('mouseenter',function(){
 		var element = jQuery(this);
 		var image	= element.find('.image').attr('src');
-		element.closest('.kura_tm_hero').find('.right .image .main').css({backgroundImage:'url('+image+')'});
+		element.closest('.ss_tm_hero').find('.right .image .main').css({backgroundImage:'url('+image+')'});
 		console.log(image);
 	});
 	wrapper.on('mouseleave',function(){
-		jQuery('.kura_tm_hero .right .image .main').css({backgroundImage:'url('+FixedImage+')'});
-	});
-}
-
-// -------------------------------------------------
-// -------------  SERVICE POPUP  -------------------
-// -------------------------------------------------
-
-function kura_tm_service_popup(){
-	
-	"use strict";
-	
-	var modalBox		= jQuery('.kura_tm_modalbox');
-	var button			= jQuery('.kura_tm_hero .services ul li a');
-	var closePopup		= modalBox.find('.close');
-	
-	button.on('click',function(){
-		var element = jQuery(this);
-		var elImage	= element.find('.image').attr('src');
-		var title	= element.find('span').text();
-		var content = element.parent('li').find('.hidden_content').html();
-		modalBox.addClass('opened');
-		modalBox.find('.description_wrap').html(content);
-		modalBox.find('.popup_informations').prepend('<div class="image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+elImage+'"></div></div>');
-		kura_tm_data_images();
-		modalBox.find('.popup_informations .image').after('<div class="title"><h3>'+title+'</h3></div>');
-		return false;
-	});
-	closePopup.on('click',function(){
-		modalBox.removeClass('opened');
-		modalBox.find('.description_wrap').html('');
-		return false;
+		jQuery('.ss_tm_hero .right .image .main').css({backgroundImage:'url('+FixedImage+')'});
 	});
 }
 

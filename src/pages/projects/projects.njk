@@ -1,0 +1,29 @@
+---
+layout: default
+title: Projects
+name: Projects
+label: Projects
+permalink: /projects/
+---
+
+<div class="ss_tm_section list-of-projects">
+<div class="cards">
+	{% for project in collections.allProjects %}
+	<a href="{{project.data.slug}}">
+	<div class="card">
+		<div class="list_inner">
+			<div class="image">
+				<img src="/img/portfolio/410-460.jpg" alt="" />
+				<div class="main" data-img-url="/img/portfolio/2.jpg"></div>
+				<div class="overlay"></div>
+				<img class="svg" src="/img/svg/right-arrow.svg" alt="" />
+				<div class="details">
+					<h3>{{project.data.title}}</h3>
+					<span>{{project.data.category}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	</a>
+	{% endfor %}
+</div>
